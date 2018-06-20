@@ -13,10 +13,10 @@ class GildedRose {
 
   public void updateQuality() {
     for (int i = 0; i < items.length; i++) {
-      if (!items[i].name.equals(BRIE)
-            && !items[i].name.equals(BACKSTAGE_PASS)) {
+      if (!isItem(BRIE, i)
+            && !isItem(BACKSTAGE_PASS, i)) {
         if (items[i].quality > 0) {
-          if (!items[i].name.equals(SULFURAS)) {
+          if (!isItem(SULFURAS, i)) {
             reduceQuality(i);
           }
         }
@@ -24,7 +24,7 @@ class GildedRose {
         if (items[i].quality < 50) {
           increaseQuality(i);
 
-          if (items[i].name.equals(BACKSTAGE_PASS)) {
+          if (isItem(BACKSTAGE_PASS, i)) {
             if (items[i].sellIn < 11) {
               if (items[i].quality < 50) {
                 increaseQuality(i);
@@ -40,15 +40,15 @@ class GildedRose {
         }
       }
 
-      if (!items[i].name.equals(SULFURAS)) {
+      if (!isItem(SULFURAS, i)) {
         reduceSellIn(i);
       }
 
       if (items[i].sellIn < 0) {
-        if (!items[i].name.equals(BRIE)) {
-          if (!items[i].name.equals(BACKSTAGE_PASS)) {
+        if (!isItem(BRIE, i)) {
+          if (!isItem(BACKSTAGE_PASS, i)) {
             if (items[i].quality > 0) {
-              if (!items[i].name.equals(SULFURAS)) {
+              if (!isItem(SULFURAS, i)) {
                 reduceQuality(i);
               }
             }
@@ -74,5 +74,9 @@ class GildedRose {
 
   private void reduceSellIn(int index) {
     items[index].sellIn = items[index].sellIn - 1;
+  }
+
+  private boolean isItem(String itemName, int index) {
+    return items[index].name.equals(itemName);
   }
 }
