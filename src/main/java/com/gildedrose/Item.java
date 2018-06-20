@@ -1,5 +1,8 @@
 package com.gildedrose;
 
+import lombok.Data;
+
+@Data
 public class Item {
 
   public String name;
