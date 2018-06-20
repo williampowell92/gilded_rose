@@ -30,7 +30,7 @@ public class BackstagePassTest {
   }
 
   @Test
-  public void qualityIncreasesByTwoBelowTenSellIn() {
+  public void qualityIncreasesByTwoFromTenSellIn() {
     pass.setSellIn(10);
     pass.updateQuality();
 
@@ -38,12 +38,29 @@ public class BackstagePassTest {
   }
 
   @Test
-  public void differentQualityIncreasesByTwoBelowTenSellIn() {
+  public void differentQualityIncreasesByTwoFromTenSellIn() {
     pass.setSellIn(10);
     pass.setQuality(15);
     pass.updateQuality();
 
     assertEquals(17, pass.getQuality());
+  }
+
+  @Test
+  public void qualityIncreasesByThreeFromFiveSellIn() {
+    pass.setSellIn(5);
+    pass.updateQuality();
+
+    assertEquals(13, pass.getQuality());
+  }
+
+  @Test
+  public void differentQualityIncreasesByThreeFromFiveSellIn() {
+    pass.setSellIn(5);
+    pass.setQuality(15);
+    pass.updateQuality();
+
+    assertEquals(18, pass.getQuality());
   }
 
 }
