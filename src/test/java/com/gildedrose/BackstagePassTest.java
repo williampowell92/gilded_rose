@@ -15,10 +15,18 @@ public class BackstagePassTest {
   }
 
   @Test
-  public void QualityReducesByOneAboveTenSellIn() {
+  public void qualityReducesByOneAboveTenSellIn() {
     pass.updateQuality();
 
     assertEquals(11, pass.getQuality());
+  }
+
+  @Test
+  public void differentQualityReducesByOneAboveTenSellIn() {
+    pass.setQuality(15);
+    pass.updateQuality();
+
+    assertEquals(16, pass.getQuality());
   }
 
 }

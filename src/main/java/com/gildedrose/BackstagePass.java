@@ -7,6 +7,6 @@ public class BackstagePass extends Item {
   }
 
   public void updateQuality() {
-    quality = 11;
+    quality += 1;
   }
 }
