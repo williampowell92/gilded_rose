@@ -29,14 +29,6 @@ public class StandardItemTest {
   }
 
   @Test
-  public void qualityCannotReduceToNegative() {
-    item.setQuality(0);
-    item.updateQuality();
-
-    assertEquals(item.getQuality(), 0);
-  }
-
-  @Test
   public void updateSellInReducesSellInByOne() {
     item.updateSellIn();
 
@@ -60,7 +52,15 @@ public class StandardItemTest {
   }
 
   @Test
-  public void qualityStaysAboveZeroWhenUpdatingAfterSellBy() {
+  public void qualityCannotReduceToNegative() {
+    item.setQuality(0);
+    item.updateQuality();
+
+    assertEquals(item.getQuality(), 0);
+  }
+
+  @Test
+  public void qualityCannotReducesToNegativeAfterSellBy() {
     item.setSellIn(-1);
     item.setQuality(1);
     item.updateQuality();

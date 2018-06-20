@@ -9,4 +9,8 @@ public class Brie extends Item {
   public void updateQuality() {
     this.quality += 1;
   }
+
+  public void updateSellIn() {
+    this.sellIn = 4;
+  }
 }
