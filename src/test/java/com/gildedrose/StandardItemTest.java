@@ -42,4 +42,12 @@ public class StandardItemTest {
 
     assertEquals(item.getSellIn(), 9);
   }
+
+  @Test
+  public void updateSellInReducesDifferentSellInByOne() {
+    item.setSellIn(5);
+    item.updateSellIn();
+
+    assertEquals(item.getSellIn(), 4);
+  }
 }
