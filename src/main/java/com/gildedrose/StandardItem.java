@@ -24,6 +24,8 @@ public class StandardItem extends Item {
   }
 
   private int sellByModifier() {
-    return this.sellIn > 0 ? BEFORE_SELL_BY_MODIFIER : PAST_SELL_BY_MODIFIER;
+    if (this.quality == 1) return BEFORE_SELL_BY_MODIFIER;
+
+    return this.sellIn >= 0 ? BEFORE_SELL_BY_MODIFIER : PAST_SELL_BY_MODIFIER;
   }
 }

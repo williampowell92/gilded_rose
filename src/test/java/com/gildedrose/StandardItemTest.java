@@ -53,9 +53,18 @@ public class StandardItemTest {
 
   @Test
   public void updateQualityReducesQualityByTwoAfterSellBy() {
-    item.setSellIn(0);
+    item.setSellIn(-1);
     item.updateQuality();
 
     assertEquals(item.getQuality(), 8);
+  }
+
+  @Test
+  public void qualityStaysAboveZeroWhenUpdatingAfterSellBy() {
+    item.setSellIn(-1);
+    item.setQuality(1);
+    item.updateQuality();
+
+    assertEquals(item.getQuality(), 0);
   }
 }
