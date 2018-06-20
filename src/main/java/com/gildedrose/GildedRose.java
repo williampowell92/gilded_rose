@@ -6,6 +6,10 @@ class GildedRose {
   private static final String BACKSTAGE_PASS = "Backstage passes to a TAFKAL80ETC concert";
   private static final String SULFURAS = "Sulfuras, Hand of Ragnaros";
   private static final String BRIE = "Aged Brie";
+  private static final int MAX_QUALITY = 50;
+  private static final int MIN_QUALITY = 0;
+  private static final int QUALITY_INCREMENT = 1;
+  private static final int SELL_IN_INCREMENT = 1;
 
   public GildedRose(Item[] items) {
       this.items = items;
@@ -38,7 +42,7 @@ class GildedRose {
           if (!isItem(BACKSTAGE_PASS, item)) {
             reduceQuality(item);
           } else {
-            zeroQuality(item);
+            makeQualityMinimum(item);
           }
         } else {
           increaseQuality(item);
@@ -51,30 +55,30 @@ class GildedRose {
     if (isItem(SULFURAS, item)) return ;
 
     if (isMinimumQuality(item)) {
-        item.quality = item.quality - 1;
+        item.quality = item.quality - QUALITY_INCREMENT;
     }
   }
 
   private boolean isMinimumQuality(Item item) {
-    return item.quality > 0;
+    return item.quality > MIN_QUALITY;
   }
 
-  private void zeroQuality(Item item) {
-    item.quality = 0;
+  private void makeQualityMinimum(Item item) {
+    item.quality = MIN_QUALITY;
   }
 
 //  Checks if item is below maximum quality AND increases item quality
   private void increaseQuality(Item item) {
-    if (isBelowMaxQuality(item)) item.quality = item.quality + 1;
+    if (isBelowMaxQuality(item)) item.quality = item.quality + QUALITY_INCREMENT;
   }
 
   private boolean isBelowMaxQuality(Item item) {
-    return item.quality < 50;
+    return item.quality < MAX_QUALITY;
   }
 
   private void reduceSellIn(Item item) {
     if (!isItem(SULFURAS, item)) {
-      item.sellIn = item.sellIn - 1;
+      item.sellIn = item.sellIn - SELL_IN_INCREMENT;
     }
   }
 
