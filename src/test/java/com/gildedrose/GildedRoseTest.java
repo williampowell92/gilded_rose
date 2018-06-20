@@ -42,4 +42,13 @@ public class GildedRoseTest {
     assertEquals(8, shop.items[0].quality);
   }
 
+  @Test
+  public void qualityStaysAboveZero() {
+    Item[] items = new Item[] { new Item("An item", 0, 0) };
+    GildedRose shop = new GildedRose(items);
+    shop.updateQuality();
+
+    assertEquals(0, shop.items[0].quality);
+  }
+
 }
