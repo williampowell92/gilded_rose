@@ -5,7 +5,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class GildedRoseTest {
-
   @Test
   public void itemsKeepNames() {
     Item[] items = new Item[] { new Item("An item", 0, 0) };
@@ -116,4 +115,14 @@ public class GildedRoseTest {
     }
   }
 
+  @Test
+  public void passesIncreasesQualityByThreeBelowFiveDays() {
+    Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 5, 0) };
+    GildedRose shop = new GildedRose(items);
+
+    for(int days = 1; days <= 5; days++) {
+      shop.updateQuality();
+      assertEquals(days * 3, shop.items[0].quality);
+    }
+  }
 }
