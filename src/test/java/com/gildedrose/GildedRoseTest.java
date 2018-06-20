@@ -33,4 +33,13 @@ public class GildedRoseTest {
     assertEquals(9, shop.items[0].sellIn);
   }
 
+  @Test
+  public void itemsLoseQualityFasterAfterSellIn() {
+    Item[] items = new Item[] { new Item("An item", 0, 10) };
+    GildedRose shop = new GildedRose(items);
+    shop.updateQuality();
+
+    assertEquals(8, shop.items[0].quality);
+  }
+
 }
