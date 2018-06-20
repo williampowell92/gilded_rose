@@ -1,10 +1,9 @@
 package com.gildedrose;
 
-public class StandardItem extends Item {
+public class StandardItem extends ReducingSellInItem {
 
   private static final int MINIMUM_QUALITY = 0;
   private static final int QUALITY_INCREMENT = 1;
-  private static final int SELL_IN_INCREMENT = 1;
   private static final int BEFORE_SELL_BY_MODIFIER = 1;
   private static final int PAST_SELL_BY_MODIFIER = 2;
 
@@ -14,10 +13,6 @@ public class StandardItem extends Item {
 
   public void updateQuality() {
     if (aboveMinimumQuality()) quality -= QUALITY_INCREMENT * sellByModifier();
-  }
-
-  public void updateSellIn() {
-    sellIn -= SELL_IN_INCREMENT;
   }
 
   private boolean aboveMinimumQuality() {

@@ -30,21 +30,6 @@ public class StandardItemTest {
   }
 
   @Test
-  public void updateSellInReducesSellInByOne() {
-    item.updateSellIn();
-
-    assertEquals(item.getSellIn(), 9);
-  }
-
-  @Test
-  public void updateSellInReducesDifferentSellInByOne() {
-    item.setSellIn(5);
-    item.updateSellIn();
-
-    assertEquals(item.getSellIn(), 4);
-  }
-
-  @Test
   public void updateQualityReducesQualityByTwoAfterSellBy() {
     item.setSellIn(-1);
     item.updateQuality();
