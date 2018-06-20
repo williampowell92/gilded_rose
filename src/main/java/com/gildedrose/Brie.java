@@ -1,6 +1,7 @@
 package com.gildedrose;
 
 public class Brie extends Item {
+
   private static final int QUALITY_INCREMENT = 1;
   private static final int SELL_IN_INCREMENT = 1;
   private static final int BEFORE_SELL_BY_MODIFIER = 1;
@@ -28,4 +29,5 @@ public class Brie extends Item {
   private boolean belowMaximumQuality() {
     return this.quality < MAXIMUM_QUALITY;
   }
+
 }

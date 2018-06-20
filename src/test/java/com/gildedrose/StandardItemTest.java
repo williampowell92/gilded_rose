@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class StandardItemTest {
+
   private StandardItem item;
 
   @Before
@@ -60,7 +61,7 @@ public class StandardItemTest {
   }
 
   @Test
-  public void qualityCannotReducesToNegativeAfterSellBy() {
+  public void qualityCannotReduceToNegativeAfterSellBy() {
     item.setSellIn(-1);
     item.setQuality(1);
     item.updateQuality();

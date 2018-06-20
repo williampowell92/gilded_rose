@@ -1,6 +1,7 @@
 package com.gildedrose;
 
 public class StandardItem extends Item {
+
   private static final int MINIMUM_QUALITY = 0;
   private static final int QUALITY_INCREMENT = 1;
   private static final int SELL_IN_INCREMENT = 1;
@@ -28,4 +29,5 @@ public class StandardItem extends Item {
 
     return this.sellIn >= 0 ? BEFORE_SELL_BY_MODIFIER : PAST_SELL_BY_MODIFIER;
   }
+
 }

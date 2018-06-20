@@ -1,6 +1,7 @@
 package com.gildedrose;
 
 class GildedRose {
+
   Item[] items;
   
   private static final String BACKSTAGE_PASS = "Backstage passes to a TAFKAL80ETC concert";
@@ -85,4 +86,5 @@ class GildedRose {
   private boolean isItem(String itemName, Item item ) {
     return item.name.equals(itemName);
   }
+
 }
