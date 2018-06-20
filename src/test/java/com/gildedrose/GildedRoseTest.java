@@ -60,4 +60,13 @@ public class GildedRoseTest {
     assertEquals(1, shop.items[0].quality);
   }
 
+  @Test
+  public void agedBrieIncreasesInQualityFasterAfterSellin() {
+    Item[] items = new Item[] { new Item("Aged Brie", 0, 0) };
+    GildedRose shop = new GildedRose(items);
+    shop.updateQuality();
+
+    assertEquals(2, shop.items[0].quality);
+  }
+
 }
