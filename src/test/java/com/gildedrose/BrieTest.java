@@ -29,21 +29,6 @@ public class BrieTest {
   }
 
   @Test
-  public void updateSellInReducesSellInByOne() {
-    brie.updateSellIn();
-
-    assertEquals(brie.getSellIn(), 4);
-  }
-
-  @Test
-  public void updateSellInReducesDifferentSellInByOne() {
-    brie.setSellIn(10);
-    brie.updateSellIn();
-
-    assertEquals(brie.getSellIn(), 9);
-  }
-
-  @Test
   public void updateQualityIncreasesQualityByTwoAfterSellBy() {
     brie.setSellIn(-1);
     brie.updateQuality();
