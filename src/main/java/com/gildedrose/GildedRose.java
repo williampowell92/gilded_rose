@@ -13,13 +13,8 @@ class GildedRose {
 
   public void updateQuality() {
     for (Item item : items) {
-      if (!isItem(BRIE, item)
-          && !isItem(BACKSTAGE_PASS, item)) {
-        if (item.quality > 0) {
-          if (!isItem(SULFURAS, item)) {
-            reduceQuality(item);
-          }
-        }
+      if (!isItem(BRIE, item) && !isItem(BACKSTAGE_PASS, item)) {
+        reduceQuality(item);
       } else {
         if (item.quality < 50) {
           increaseQuality(item);
@@ -43,13 +38,9 @@ class GildedRose {
       if (item.sellIn < 0) {
         if (!isItem(BRIE, item)) {
           if (!isItem(BACKSTAGE_PASS, item)) {
-            if (item.quality > 0) {
-              if (!isItem(SULFURAS, item)) {
-                reduceQuality(item);
-              }
-            }
+            reduceQuality(item);
           } else {
-            reduceQuality(item, item.quality);
+            zeroQuality(item);
           }
         } else {
           increaseQuality(item);
@@ -59,17 +50,19 @@ class GildedRose {
   }
   
   private void reduceQuality(Item item) {
-    item.quality = item.quality - 1;
+    if (isItem(SULFURAS, item)) return ;
+
+    if (item.quality > 0) {
+        item.quality = item.quality - 1;
+    }
   }
 
-  private void reduceQuality(Item item, int amount) {
-    item.quality = item.quality - amount;
+  private void zeroQuality(Item item) {
+    item.quality = 0;
   }
 
   private void increaseQuality(Item item) {
-    if (item.quality < 50) {
-      item.quality = item.quality + 1;
-    }
+    if (item.quality < 50) item.quality = item.quality + 1;
   }
 
   private void reduceSellIn(Item item) {
