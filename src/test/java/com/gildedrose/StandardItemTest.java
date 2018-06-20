@@ -35,4 +35,11 @@ public class StandardItemTest {
 
     assertEquals(item.getQuality(), 0);
   }
+
+  @Test
+  public void updateSellInReducesSellInByOne() {
+    item.updateSellIn();
+
+    assertEquals(item.getSellIn(), 9);
+  }
 }

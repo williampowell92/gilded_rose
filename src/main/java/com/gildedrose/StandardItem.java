@@ -12,6 +12,10 @@ public class StandardItem extends Item {
     if (aboveMinimumQuality()) this.quality -= QUALITY_INCREMENT;
   }
 
+  public void updateSellIn() {
+    this.sellIn = 9;
+  }
+
   private boolean aboveMinimumQuality() {
     return this.quality > MINIMUM_QUALITY;
   }
