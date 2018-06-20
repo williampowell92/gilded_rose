@@ -105,4 +105,15 @@ public class GildedRoseTest {
     assertEquals(11, shop.items[0].quality);
   }
 
+  @Test
+  public void passesIncreasesQualityByTwoBelowTenDays() {
+    Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 10, 0) };
+    GildedRose shop = new GildedRose(items);
+
+    for(int days = 1; days <= 5; days++) {
+      shop.updateQuality();
+      assertEquals(days * 2, shop.items[0].quality);
+    }
+  }
+
 }
