@@ -47,7 +47,6 @@ class GildedRose {
     }
   }
 
-//  Checks if item is minimum quality AND reduces the item quality
   private void reduceQuality(Item item) {
     if (isItem(SULFURAS, item)) return ;
 
@@ -66,7 +65,11 @@ class GildedRose {
 
 //  Checks if item is below maximum quality AND increases item quality
   private void increaseQuality(Item item) {
-    if (item.quality < 50) item.quality = item.quality + 1;
+    if (isBelowMaxQuality(item)) item.quality = item.quality + 1;
+  }
+
+  private boolean isBelowMaxQuality(Item item) {
+    return item.quality < 50;
   }
 
   private void reduceSellIn(Item item) {
