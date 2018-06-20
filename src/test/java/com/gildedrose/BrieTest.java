@@ -42,4 +42,20 @@ public class BrieTest {
 
     assertEquals(brie.getSellIn(), 9);
   }
+
+  @Test
+  public void updateQualityIncreasesQualityByTwoAfterSellBy() {
+    brie.setSellIn(-1);
+    brie.updateQuality();
+
+    assertEquals(brie.getQuality(), 7);
+  }
+
+  @Test
+  public void qualityCannotIncreaseAboveMaximum() {
+    brie.setQuality(50);
+    brie.updateQuality();
+
+    assertEquals(50, brie.getQuality());
+  }
 }
