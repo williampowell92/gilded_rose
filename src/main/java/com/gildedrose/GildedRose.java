@@ -18,18 +18,18 @@ class GildedRose {
           }
         } else {
           if (items[i].quality < 50) {
-            items[i].quality = items[i].quality + 1;
+            increaseQuality(i);
 
             if (items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
               if (items[i].sellIn < 11) {
                 if (items[i].quality < 50) {
-                  items[i].quality = items[i].quality + 1;
+                  increaseQuality(i);
                 }
               }
 
               if (items[i].sellIn < 6) {
                 if (items[i].quality < 50) {
-                  items[i].quality = items[i].quality + 1;
+                  increaseQuality(i);
                 }
               }
             }
@@ -45,7 +45,7 @@ class GildedRose {
             if (!items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
               if (items[i].quality > 0) {
                 if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                  items[i].quality = items[i].quality - 1;
+                  reduceQuality(i);
                 }
               }
             } else {
@@ -53,7 +53,7 @@ class GildedRose {
             }
           } else {
             if (items[i].quality < 50) {
-              items[i].quality = items[i].quality + 1;
+              increaseQuality(i);
             }
           }
         }
@@ -61,6 +61,10 @@ class GildedRose {
     }
     
     public void reduceQuality(int index) {
-        items[index].quality = items[index].quality - 1;
+      items[index].quality = items[index].quality - 1;
+    }
+    
+    public void increaseQuality(int index) {
+      items[index].quality = items[index].quality + 1;
     }
 }
