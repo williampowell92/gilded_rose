@@ -6,4 +6,7 @@ public class BackstagePass extends Item {
     super(name, sellIn, quality);
   }
 
+  public void updateQuality() {
+    quality = 11;
+  }
 }
