@@ -37,4 +37,13 @@ public class BackstagePassTest {
     assertEquals(12, pass.getQuality());
   }
 
+  @Test
+  public void differentQualityIncreasesByTwoBelowTenSellIn() {
+    pass.setSellIn(10);
+    pass.setQuality(15);
+    pass.updateQuality();
+
+    assertEquals(17, pass.getQuality());
+  }
+
 }
