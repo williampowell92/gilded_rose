@@ -12,71 +12,75 @@ class GildedRose {
   }
 
   public void updateQuality() {
-    for (int i = 0; i < items.length; i++) {
-      if (!isItem(BRIE, i)
-            && !isItem(BACKSTAGE_PASS, i)) {
-        if (items[i].quality > 0) {
-          if (!isItem(SULFURAS, i)) {
-            reduceQuality(i);
+    for (Item item : items) {
+      if (!isItem(BRIE, item)
+          && !isItem(BACKSTAGE_PASS, item)) {
+        if (item.quality > 0) {
+          if (!isItem(SULFURAS, item)) {
+            reduceQuality(item);
           }
         }
       } else {
-        if (items[i].quality < 50) {
-          increaseQuality(i);
+        if (item.quality < 50) {
+          increaseQuality(item);
 
-          if (isItem(BACKSTAGE_PASS, i)) {
-            if (items[i].sellIn < 11) {
-              if (items[i].quality < 50) {
-                increaseQuality(i);
+          if (isItem(BACKSTAGE_PASS, item)) {
+            if (item.sellIn < 11) {
+              if (item.quality < 50) {
+                increaseQuality(item);
               }
             }
 
-            if (items[i].sellIn < 6) {
-              if (items[i].quality < 50) {
-                increaseQuality(i);
+            if (item.sellIn < 6) {
+              if (item.quality < 50) {
+                increaseQuality(item);
               }
             }
           }
         }
       }
 
-      if (!isItem(SULFURAS, i)) {
-        reduceSellIn(i);
+      if (!isItem(SULFURAS, item)) {
+        reduceSellIn(item);
       }
 
-      if (items[i].sellIn < 0) {
-        if (!isItem(BRIE, i)) {
-          if (!isItem(BACKSTAGE_PASS, i)) {
-            if (items[i].quality > 0) {
-              if (!isItem(SULFURAS, i)) {
-                reduceQuality(i);
+      if (item.sellIn < 0) {
+        if (!isItem(BRIE, item)) {
+          if (!isItem(BACKSTAGE_PASS, item)) {
+            if (item.quality > 0) {
+              if (!isItem(SULFURAS, item)) {
+                reduceQuality(item);
               }
             }
           } else {
-            items[i].quality = items[i].quality - items[i].quality;
+            reduceQuality(item, item.quality);
           }
         } else {
-          if (items[i].quality < 50) {
-            increaseQuality(i);
+          if (item.quality < 50) {
+            increaseQuality(item);
           }
         }
       }
     }
   }
   
-  private void reduceQuality(int index) {
-    items[index].quality = items[index].quality - 1;
+  private void reduceQuality(Item item) {
+    item.quality = item.quality - 1;
   }
 
-  private void increaseQuality(int index) {
-    items[index].quality = items[index].quality + 1;
+  private void reduceQuality(Item item, int amount) {
+    item.quality = item.quality - amount;
   }
 
-  private void reduceSellIn(int index) {
-    items[index].sellIn = items[index].sellIn - 1;
+  private void increaseQuality(Item item) {
+    item.quality = item.quality + 1;
   }
 
-  private boolean isItem(String itemName, int index) {
-    return items[index].name.equals(itemName);
+  private void reduceSellIn(Item item) {
+    item.sellIn = item.sellIn - 1;
+  }
+
+  private boolean isItem(String itemName, Item item ) {
+    return item.name.equals(itemName);
   }
 }
