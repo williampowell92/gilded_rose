@@ -134,4 +134,13 @@ public class GildedRoseTest {
 
     assertEquals(0, shop.items[0].quality);
   }
+
+  @Test
+  public void passesQualityDoesNotIncreaseAboveFiftyTenDaysOrMore() {
+    Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 11, 50) };
+    GildedRose shop = new GildedRose(items);
+    shop.updateQuality();
+
+    assertEquals(50, shop.items[0].quality);
+  }
 }
