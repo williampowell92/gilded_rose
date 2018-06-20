@@ -29,4 +29,19 @@ public class SulfurasTest {
     assertEquals(5, sulfuras.getQuality());
   }
 
+  @Test
+  public void updateSellInDoesNotChangeSellIn() {
+    sulfuras.updateSellIn();
+
+    assertEquals(10, sulfuras.getSellIn());
+  }
+
+  @Test
+  public void updateSellInDoesNotChangeDifferentSellIn() {
+    sulfuras.setSellIn(5);
+    sulfuras.updateSellIn();
+
+    assertEquals(5, sulfuras.getSellIn());
+  }
+
 }

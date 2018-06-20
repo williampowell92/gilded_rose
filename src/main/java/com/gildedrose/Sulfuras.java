@@ -8,4 +8,5 @@ public class Sulfuras extends Item {
 
   public void updateQuality() {}
 
+  public void updateSellIn() {}
 }
