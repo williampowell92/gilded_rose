@@ -11,6 +11,6 @@ public class Brie extends Item {
   }
 
   public void updateSellIn() {
-    this.sellIn = 4;
+    this.sellIn -= 1;
   }
 }

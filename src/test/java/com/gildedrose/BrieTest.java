@@ -34,4 +34,12 @@ public class BrieTest {
 
     assertEquals(brie.getSellIn(), 4);
   }
+
+  @Test
+  public void updateSellInReducesDifferentSellInByOne() {
+    brie.setSellIn(10);
+    brie.updateSellIn();
+
+    assertEquals(brie.getSellIn(), 9);
+  }
 }
