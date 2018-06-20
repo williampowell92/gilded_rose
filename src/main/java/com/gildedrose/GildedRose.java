@@ -31,9 +31,7 @@ class GildedRose {
         }
       }
 
-      if (!isItem(SULFURAS, item)) {
-        reduceSellIn(item);
-      }
+      reduceSellIn(item);
 
       if (item.sellIn < 0) {
         if (!isItem(BRIE, item)) {
@@ -66,7 +64,9 @@ class GildedRose {
   }
 
   private void reduceSellIn(Item item) {
-    item.sellIn = item.sellIn - 1;
+    if (!isItem(SULFURAS, item)) {
+      item.sellIn = item.sellIn - 1;
+    }
   }
 
   private boolean isItem(String itemName, Item item ) {
