@@ -13,21 +13,21 @@ public class Brie extends Item {
   }
 
   public void updateQuality() {
-    if (belowMaximumQuality()) this.quality += QUALITY_INCREMENT * sellByModifier();
+    if (belowMaximumQuality()) quality += QUALITY_INCREMENT * sellByModifier();
   }
 
   public void updateSellIn() {
-    this.sellIn -= SELL_IN_INCREMENT;
+    sellIn -= SELL_IN_INCREMENT;
   }
 
   private int sellByModifier() {
-    if (this.quality > 48) return BEFORE_SELL_BY_MODIFIER;
+    if (quality > 48) return BEFORE_SELL_BY_MODIFIER;
 
-    return this.sellIn >= 0 ? BEFORE_SELL_BY_MODIFIER : PAST_SELL_BY_MODIFIER;
+    return sellIn >= 0 ? BEFORE_SELL_BY_MODIFIER : PAST_SELL_BY_MODIFIER;
   }
 
   private boolean belowMaximumQuality() {
-    return this.quality < MAXIMUM_QUALITY;
+    return quality < MAXIMUM_QUALITY;
   }
 
 }

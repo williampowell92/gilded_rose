@@ -13,21 +13,21 @@ public class StandardItem extends Item {
   }
 
   public void updateQuality() {
-    if (aboveMinimumQuality()) this.quality -= QUALITY_INCREMENT * sellByModifier();
+    if (aboveMinimumQuality()) quality -= QUALITY_INCREMENT * sellByModifier();
   }
 
   public void updateSellIn() {
-    this.sellIn -= SELL_IN_INCREMENT;
+    sellIn -= SELL_IN_INCREMENT;
   }
 
   private boolean aboveMinimumQuality() {
-    return this.quality > MINIMUM_QUALITY;
+    return quality > MINIMUM_QUALITY;
   }
 
   private int sellByModifier() {
-    if (this.quality == 1) return BEFORE_SELL_BY_MODIFIER;
+    if (quality == 1) return BEFORE_SELL_BY_MODIFIER;
 
-    return this.sellIn >= 0 ? BEFORE_SELL_BY_MODIFIER : PAST_SELL_BY_MODIFIER;
+    return sellIn >= 0 ? BEFORE_SELL_BY_MODIFIER : PAST_SELL_BY_MODIFIER;
   }
 
 }
