@@ -7,8 +7,20 @@ public class BackstagePass extends Item {
   }
 
   public void updateQuality() {
+    incrementQuality();
+    addTenSellInLeftBonus();
+    addFiveSellInLeftBonus();
+  }
+
+  private void incrementQuality() {
     quality += 1;
-    if (sellIn <= 10) quality += 1;
-    if (sellIn <= 5) quality += 1;
+  }
+
+  private void addTenSellInLeftBonus() {
+    if (sellIn <= 10) incrementQuality();
+  }
+
+  private void addFiveSellInLeftBonus() {
+    if (sellIn <= 5) incrementQuality();
   }
 }
