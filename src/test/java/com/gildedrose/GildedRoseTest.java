@@ -96,4 +96,13 @@ public class GildedRoseTest {
     assertEquals(10, shop.items[0].sellIn);
   }
 
+  @Test
+  public void backStagePassesIncreaseInQuality() {
+    Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 20, 10) };
+    GildedRose shop = new GildedRose(items);
+    shop.updateQuality();
+
+    assertEquals(11, shop.items[0].quality);
+  }
+
 }
