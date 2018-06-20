@@ -11,7 +11,7 @@ public class SulfurasTest {
 
   @Before
   public void setup() {
-    sulfuras = new Sulfuras("Sulfuras", 10, 10);
+    sulfuras = new Sulfuras("Sulfuras, Hand of Ragnaros", 10, 10);
   }
 
   @Test
