@@ -125,4 +125,13 @@ public class GildedRoseTest {
       assertEquals(days * 3, shop.items[0].quality);
     }
   }
+
+  @Test
+  public void passesQualityReducesToZeroAfterSellIn() {
+    Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 0, 25) };
+    GildedRose shop = new GildedRose(items);
+    shop.updateQuality();
+
+    assertEquals(0, shop.items[0].quality);
+  }
 }
