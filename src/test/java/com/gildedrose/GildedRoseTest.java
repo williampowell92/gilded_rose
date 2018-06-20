@@ -15,4 +15,13 @@ public class GildedRoseTest {
     assertEquals("An item", shop.items[0].name);
   }
 
+  @Test
+  public void normalItemsLoseQuality() {
+    Item[] items = new Item[] { new Item("An item", 10, 10) };
+    GildedRose shop = new GildedRose(items);
+    shop.updateQuality();
+
+    assertEquals(9, shop.items[0].quality);
+  }
+
 }
