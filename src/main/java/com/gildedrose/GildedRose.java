@@ -4,6 +4,7 @@ class GildedRose {
   Item[] items;
   
   private static final String BACKSTAGE_PASS = "Backstage passes to a TAFKAL80ETC concert";
+  private static final String SULFURAS = "Sulfuras, Hand of Ragnaros";
 
   public GildedRose(Item[] items) {
       this.items = items;
@@ -14,7 +15,7 @@ class GildedRose {
       if (!items[i].name.equals("Aged Brie")
             && !items[i].name.equals(BACKSTAGE_PASS)) {
         if (items[i].quality > 0) {
-          if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
+          if (!items[i].name.equals(SULFURAS)) {
             reduceQuality(i);
           }
         }
@@ -38,7 +39,7 @@ class GildedRose {
         }
       }
 
-      if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
+      if (!items[i].name.equals(SULFURAS)) {
         reduceSellIn(i);
       }
 
@@ -46,7 +47,7 @@ class GildedRose {
         if (!items[i].name.equals("Aged Brie")) {
           if (!items[i].name.equals(BACKSTAGE_PASS)) {
             if (items[i].quality > 0) {
-              if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
+              if (!items[i].name.equals(SULFURAS)) {
                 reduceQuality(i);
               }
             }
