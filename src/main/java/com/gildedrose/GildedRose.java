@@ -46,19 +46,25 @@ class GildedRose {
       }
     }
   }
-  
+
+//  Checks if item is minimum quality AND reduces the item quality
   private void reduceQuality(Item item) {
     if (isItem(SULFURAS, item)) return ;
 
-    if (item.quality > 0) {
+    if (isMinimumQuality(item)) {
         item.quality = item.quality - 1;
     }
+  }
+
+  private boolean isMinimumQuality(Item item) {
+    return item.quality > 0;
   }
 
   private void zeroQuality(Item item) {
     item.quality = 0;
   }
 
+//  Checks if item is below maximum quality AND increases item quality
   private void increaseQuality(Item item) {
     if (item.quality < 50) item.quality = item.quality + 1;
   }
