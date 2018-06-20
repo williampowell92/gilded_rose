@@ -19,4 +19,20 @@ public class StandardItemTest {
 
     assertEquals(item.getQuality(), 9);
   }
+
+  @Test
+  public void updateQualityReducesDifferentQualityByOne() {
+    item.setQuality(5);
+    item.updateQuality();
+
+    assertEquals(item.getQuality(), 4);
+  }
+
+  @Test
+  public void qualityCannotReduceToNegative() {
+    item.setQuality(0);
+    item.updateQuality();
+
+    assertEquals(item.getQuality(), 0);
+  }
 }
