@@ -50,4 +50,12 @@ public class StandardItemTest {
 
     assertEquals(item.getSellIn(), 4);
   }
+
+  @Test
+  public void updateQualityReducesQualityByTwoAfterSellBy() {
+    item.setSellIn(0);
+    item.updateQuality();
+
+    assertEquals(item.getQuality(), 8);
+  }
 }
