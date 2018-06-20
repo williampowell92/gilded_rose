@@ -20,6 +20,8 @@ public class Brie extends Item {
   }
 
   private int sellByModifier() {
+    if (this.quality > 48) return BEFORE_SELL_BY_MODIFIER;
+
     return this.sellIn >= 0 ? BEFORE_SELL_BY_MODIFIER : PAST_SELL_BY_MODIFIER;
   }
 

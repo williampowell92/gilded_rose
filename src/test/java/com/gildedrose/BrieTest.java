@@ -58,4 +58,13 @@ public class BrieTest {
 
     assertEquals(50, brie.getQuality());
   }
+
+  @Test
+  public void qualityCannotIncreaseAboveMaximumPastSellBy() {
+    brie.setQuality(49);
+    brie.setSellIn(-1);
+    brie.updateQuality();
+
+    assertEquals(50, brie.getQuality());
+  }
 }
