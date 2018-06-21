@@ -19,7 +19,7 @@ public class Brie extends StandardItem {
   private int sellByModifier() {
     if (quality > 48) return BEFORE_SELL_BY_MODIFIER;
 
-    return sellIn >= 0 ? BEFORE_SELL_BY_MODIFIER : PAST_SELL_BY_MODIFIER;
+    return sellIn > 0 ? BEFORE_SELL_BY_MODIFIER : PAST_SELL_BY_MODIFIER;
   }
 
   private boolean belowMaximumQuality() {

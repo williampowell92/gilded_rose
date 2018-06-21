@@ -27,7 +27,7 @@ public class StandardItem extends Item {
   private int sellByModifier() {
     if (quality == 1) return BEFORE_SELL_BY_MODIFIER;
 
-    return sellIn >= 0 ? BEFORE_SELL_BY_MODIFIER : PAST_SELL_BY_MODIFIER;
+    return sellIn > 0 ? BEFORE_SELL_BY_MODIFIER : PAST_SELL_BY_MODIFIER;
   }
 
 }

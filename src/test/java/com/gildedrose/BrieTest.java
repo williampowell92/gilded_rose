@@ -30,7 +30,7 @@ public class BrieTest {
 
   @Test
   public void updateQualityIncreasesQualityByTwoAfterSellBy() {
-    brie.setSellIn(-1);
+    brie.setSellIn(0);
     brie.updateQuality();
 
     assertEquals(brie.getQuality(), 7);

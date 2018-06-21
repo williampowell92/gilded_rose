@@ -31,7 +31,7 @@ public class StandardItemTest {
 
   @Test
   public void updateQualityReducesQualityByTwoAfterSellBy() {
-    item.setSellIn(-1);
+    item.setSellIn(0);
     item.updateQuality();
 
     assertEquals(item.getQuality(), 8);
