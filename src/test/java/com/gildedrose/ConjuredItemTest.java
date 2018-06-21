@@ -29,4 +29,12 @@ public class ConjuredItemTest {
     assertEquals(8, item.getQuality());
   }
 
+  @Test
+  public void qualityDropsByFourAfterSellBy() {
+    item.setSellIn(0);
+    item.updateQuality();
+
+    assertEquals(2, item.getQuality());
+  }
+
 }
