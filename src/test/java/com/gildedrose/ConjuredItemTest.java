@@ -37,4 +37,12 @@ public class ConjuredItemTest {
     assertEquals(2, item.getQuality());
   }
 
+  @Test
+  public void qualityCannotReduceToNegative() {
+    item.setQuality(1);
+    item.updateQuality();
+
+    assertEquals(0, item.getQuality());
+  }
+
 }
