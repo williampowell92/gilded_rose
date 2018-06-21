@@ -1,7 +1,8 @@
-package com.gildedrose;
+package com.gildedrose.Unit;
 
 import static org.junit.Assert.*;
 
+import com.gildedrose.Sulfuras;
 import org.junit.Before;
 import org.junit.Test;
 

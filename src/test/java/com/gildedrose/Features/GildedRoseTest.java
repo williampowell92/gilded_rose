@@ -1,7 +1,13 @@
-package com.gildedrose;
+package com.gildedrose.Features;
 
 import static org.junit.Assert.*;
 
+import com.gildedrose.BackstagePass;
+import com.gildedrose.Brie;
+import com.gildedrose.ConjuredItem;
+import com.gildedrose.GildedRose;
+import com.gildedrose.StandardItem;
+import com.gildedrose.Sulfuras;
 import org.junit.Test;
 
 public class GildedRoseTest {
@@ -169,4 +175,45 @@ public class GildedRoseTest {
 
     assertEquals(50, shop.items[0].quality);
   }
+
+  @Test
+  public void conjuredQualityDecreasesByTwoBeforeSellBy() {
+    ConjuredItem[] items = new ConjuredItem[]{
+        new ConjuredItem("Conjured Mana Cake", 3, 6)};
+    GildedRose shop = new GildedRose(items);
+    shop.updateQuality();
+
+    assertEquals(4, shop.items[0].quality);
+  }
+
+  @Test
+  public void conjuredQualityDecreasesByFourAfterSellBy() {
+    ConjuredItem[] items = new ConjuredItem[]{
+        new ConjuredItem("Conjured Mana Cake", 0, 6)};
+    GildedRose shop = new GildedRose(items);
+    shop.updateQuality();
+
+    assertEquals(2, shop.items[0].quality);
+  }
+
+  @Test
+  public void conjuredQualityStaysAboveMaximum() {
+    ConjuredItem[] items = new ConjuredItem[]{
+        new ConjuredItem("Conjured Mana Cake", 3, 1)};
+    GildedRose shop = new GildedRose(items);
+    shop.updateQuality();
+
+    assertEquals(0, shop.items[0].quality);
+  }
+
+  @Test
+  public void conjuredQualityStaysAboveMaximumAfterSellBy() {
+    ConjuredItem[] items = new ConjuredItem[]{
+        new ConjuredItem("Conjured Mana Cake", 0, 3)};
+    GildedRose shop = new GildedRose(items);
+    shop.updateQuality();
+
+    assertEquals(0, shop.items[0].quality);
+  }
+
 }

@@ -7,7 +7,7 @@ public class ConjuredItem extends StandardItem {
   private static final int PAST_SELL_BY_MODIFIER = 2;
   private static final int MINIMUM_QUALITY = 0;
 
-  ConjuredItem(String name, int sellIn, int quality) {
+  public ConjuredItem(String name, int sellIn, int quality) {
     super(name, sellIn, quality);
   }
 

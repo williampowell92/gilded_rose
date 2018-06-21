@@ -1,8 +1,8 @@
 package com.gildedrose;
 
-class GildedRose {
+public class GildedRose {
 
-  final StandardItem[] items;
+  public final StandardItem[] items;
 
   public GildedRose(StandardItem[] items) {
     this.items = items;
