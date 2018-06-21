@@ -89,4 +89,22 @@ public class BackstagePassTest {
     assertEquals(50, pass.getQuality());
   }
 
+  @Test
+  public void qualityDropsToZeroAtSellIn() {
+    pass.setSellIn(0);
+    pass.updateQuality();
+
+    assertEquals(0, pass.getQuality());
+  }
+
+  @Test
+  public void qualityStaysAtZeroPastSellIn() {
+    pass.setSellIn(0);
+    pass.updateQuality();
+    pass.updateSellIn();
+    pass.updateQuality();
+
+    assertEquals(0, pass.getQuality());
+  }
+
 }
