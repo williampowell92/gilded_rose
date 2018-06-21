@@ -1,4 +1,4 @@
-package com.gildedrose.Unit;
+package com.gildedrose.Features;
 
 import com.gildedrose.BackstagePass;
 import com.gildedrose.Brie;
