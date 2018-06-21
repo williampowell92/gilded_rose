@@ -63,4 +63,12 @@ public class BackstagePassTest {
     assertEquals(18, pass.getQuality());
   }
 
+  @Test
+  public void qualityCannotIncreaseAboveMaximumAboveTenDaysLeft() {
+    pass.setQuality(50);
+    pass.updateQuality();
+
+    assertEquals(50, pass.getQuality());
+  }
+
 }

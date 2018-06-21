@@ -2,6 +2,8 @@ package com.gildedrose;
 
 public class BackstagePass extends Item {
 
+  private static final int MAXIMUM_QUALITY = 50;
+
   public BackstagePass(String name, int sellIn, int quality) {
     super(name, sellIn, quality);
   }
@@ -13,7 +15,7 @@ public class BackstagePass extends Item {
   }
 
   private void incrementQuality() {
-    quality += 1;
+    if (quality < MAXIMUM_QUALITY) quality += 1;
   }
 
   private void addTenSellInLeftBonus() {
