@@ -3,6 +3,7 @@ package com.gildedrose;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
+import org.junit.Test;
 
 public class ConjuredItemTest {
 
@@ -11,6 +12,13 @@ public class ConjuredItemTest {
   @Before
   public void setup() {
     item = new ConjuredItem("Conjured Mana Cake", 3, 6);
+  }
+
+  @Test
+  public void qualityDropsByTwoBeforeSellBy() {
+    item.updateQuality();
+
+    assertEquals(4, item.getQuality());
   }
 
 }
