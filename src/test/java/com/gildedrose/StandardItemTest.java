@@ -53,4 +53,19 @@ public class StandardItemTest {
 
     assertEquals(item.getQuality(), 0);
   }
+
+  @Test
+  public void updateSellInReducesSellInByOne() {
+    item.updateSellIn();
+
+    assertEquals(item.getSellIn(), 9);
+  }
+
+  @Test
+  public void updateSellInReducesDifferentSellInByOne() {
+    item.setSellIn(5);
+    item.updateSellIn();
+
+    assertEquals(item.getSellIn(), 4);
+  }
 }

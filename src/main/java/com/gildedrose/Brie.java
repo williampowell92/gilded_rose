@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class Brie extends ReducingSellInItem {
+public class Brie extends StandardItem {
 
   private static final int QUALITY_INCREMENT = 1;
   private static final int BEFORE_SELL_BY_MODIFIER = 1;
@@ -11,6 +11,7 @@ public class Brie extends ReducingSellInItem {
     super(name, sellIn, quality);
   }
 
+  @Override
   public void updateQuality() {
     if (belowMaximumQuality()) quality += QUALITY_INCREMENT * sellByModifier();
   }

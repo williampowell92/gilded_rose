@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class BackstagePass extends ReducingSellInItem {
+public class BackstagePass extends StandardItem {
 
   private static final int MAXIMUM_QUALITY = 50;
 
@@ -8,6 +8,7 @@ public class BackstagePass extends ReducingSellInItem {
     super(name, sellIn, quality);
   }
 
+  @Override
   public void updateQuality() {
     incrementQuality();
     addTenSellInLeftBonus();
