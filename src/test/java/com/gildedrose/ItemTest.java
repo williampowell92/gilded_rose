@@ -15,6 +15,6 @@ public class ItemTest {
 
   @Test
   public void isStringCreatesCorrectString() {
-    assertEquals(item.toString(), "name, 5, 10");
+    assertEquals("name, 5, 10", item.toString());
   }
 }

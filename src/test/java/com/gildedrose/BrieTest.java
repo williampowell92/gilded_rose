@@ -17,7 +17,7 @@ public class BrieTest {
   public void updateQualityIncreasesQualityByOne() {
     brie.updateQuality();
 
-    assertEquals(brie.getQuality(), 6);
+    assertEquals(6, brie.getQuality());
   }
 
   @Test
@@ -25,7 +25,7 @@ public class BrieTest {
     brie.setQuality(10);
     brie.updateQuality();
 
-    assertEquals(brie.getQuality(), 11);
+    assertEquals(11, brie.getQuality());
   }
 
   @Test
@@ -33,7 +33,7 @@ public class BrieTest {
     brie.setSellIn(0);
     brie.updateQuality();
 
-    assertEquals(brie.getQuality(), 7);
+    assertEquals(7, brie.getQuality());
   }
 
   @Test

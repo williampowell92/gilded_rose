@@ -13,10 +13,10 @@ public class Brie extends StandardItem {
 
   @Override
   public void updateQuality() {
-    if (belowMaximumQuality()) quality += QUALITY_INCREMENT * sellByModifier();
+    if (belowMaximumQuality()) quality += QUALITY_INCREMENT * brieSellByModifier();
   }
 
-  private int sellByModifier() {
+  private int brieSellByModifier() {
     if (quality > 48) return BEFORE_SELL_BY_MODIFIER;
 
     return sellIn > 0 ? BEFORE_SELL_BY_MODIFIER : PAST_SELL_BY_MODIFIER;

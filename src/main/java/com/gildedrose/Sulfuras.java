@@ -7,9 +7,13 @@ public class Sulfuras extends StandardItem {
   }
 
   @Override
-  public void updateQuality() {}
+  public void updateQuality() {
+    // Intentionally blank override as Sulfuras' quality does not change
+  }
 
   @Override
-  public void updateSellIn() {}
+  public void updateSellIn() {
+    // Intentionally blank override as Sulfuras' sellIn does not change
+  }
 
 }

@@ -18,7 +18,7 @@ public class StandardItemTest {
   public void updateQualityReducesQualityByOne() {
     item.updateQuality();
 
-    assertEquals(item.getQuality(), 9);
+    assertEquals(9, item.getQuality());
   }
 
   @Test
@@ -26,7 +26,7 @@ public class StandardItemTest {
     item.setQuality(5);
     item.updateQuality();
 
-    assertEquals(item.getQuality(), 4);
+    assertEquals(4, item.getQuality());
   }
 
   @Test
@@ -34,7 +34,7 @@ public class StandardItemTest {
     item.setSellIn(0);
     item.updateQuality();
 
-    assertEquals(item.getQuality(), 8);
+    assertEquals(8, item.getQuality());
   }
 
   @Test
@@ -42,7 +42,7 @@ public class StandardItemTest {
     item.setQuality(0);
     item.updateQuality();
 
-    assertEquals(item.getQuality(), 0);
+    assertEquals(0, item.getQuality());
   }
 
   @Test
@@ -51,14 +51,14 @@ public class StandardItemTest {
     item.setQuality(1);
     item.updateQuality();
 
-    assertEquals(item.getQuality(), 0);
+    assertEquals(0, item.getQuality());
   }
 
   @Test
   public void updateSellInReducesSellInByOne() {
     item.updateSellIn();
 
-    assertEquals(item.getSellIn(), 9);
+    assertEquals(9, item.getSellIn());
   }
 
   @Test
@@ -66,6 +66,6 @@ public class StandardItemTest {
     item.setSellIn(5);
     item.updateSellIn();
 
-    assertEquals(item.getSellIn(), 4);
+    assertEquals(4, item.getSellIn());
   }
 }
