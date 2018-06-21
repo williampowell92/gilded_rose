@@ -14,18 +14,26 @@ public class BackstagePass extends StandardItem {
     addTenSellInLeftBonus();
     addFiveSellInLeftBonus();
 
-    if (sellIn <= 0) quality = 0;
+    if (sellIn <= 0) {
+      quality = 0;
+    }
   }
 
   private void incrementQuality() {
-    if (quality < MAXIMUM_QUALITY) quality += 1;
+    if (quality < MAXIMUM_QUALITY) {
+      quality += 1;
+    }
   }
 
   private void addTenSellInLeftBonus() {
-    if (sellIn <= 10) incrementQuality();
+    if (sellIn <= 10) {
+      incrementQuality();
+    }
   }
 
   private void addFiveSellInLeftBonus() {
-    if (sellIn <= 5) incrementQuality();
+    if (sellIn <= 5) {
+      incrementQuality();
+    }
   }
 }

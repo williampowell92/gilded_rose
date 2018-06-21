@@ -5,7 +5,7 @@ class GildedRose {
   final StandardItem[] items;
 
   public GildedRose(StandardItem[] items) {
-      this.items = items;
+    this.items = items;
   }
 
   public void updateQuality() {

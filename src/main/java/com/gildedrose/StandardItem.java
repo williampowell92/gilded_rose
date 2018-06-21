@@ -13,7 +13,9 @@ class StandardItem extends Item {
   }
 
   public void updateQuality() {
-    if (aboveMinimumQuality()) quality -= QUALITY_INCREMENT * sellByModifier();
+    if (aboveMinimumQuality()) {
+      quality -= QUALITY_INCREMENT * sellByModifier();
+    }
   }
 
   public void updateSellIn() {
@@ -25,7 +27,9 @@ class StandardItem extends Item {
   }
 
   private int sellByModifier() {
-    if (quality == 1) return BEFORE_SELL_BY_MODIFIER;
+    if (quality == 1) {
+      return BEFORE_SELL_BY_MODIFIER;
+    }
 
     return sellIn > 0 ? BEFORE_SELL_BY_MODIFIER : PAST_SELL_BY_MODIFIER;
   }

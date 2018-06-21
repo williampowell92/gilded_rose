@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class ItemTest {
+
   private Item item;
 
   @Before
