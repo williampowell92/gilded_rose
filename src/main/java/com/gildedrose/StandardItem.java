@@ -3,9 +3,9 @@ package com.gildedrose;
 public class StandardItem extends Item {
 
   private static final int MINIMUM_QUALITY = 0;
-  private static final int QUALITY_INCREMENT = 1;
-  private static final int BEFORE_SELL_BY_MODIFIER = 1;
-  private static final int PAST_SELL_BY_MODIFIER = 2;
+  final int QUALITY_INCREMENT = 1;
+  final int BEFORE_SELL_BY_MODIFIER = 1;
+  final int PAST_SELL_BY_MODIFIER = 2;
   private static final int SELL_IN_INCREMENT = 1;
 
   public StandardItem(String name, int sellIn, int quality) {
