@@ -2,20 +2,21 @@ package com.gildedrose;
 
 public class StandardItem extends Item {
 
-  final int MINIMUM_QUALITY = 0;
-  final int QUALITY_INCREMENT = 1;
-  final int BEFORE_SELL_BY_MODIFIER = 1;
-  final int PAST_SELL_BY_MODIFIER = 2;
+  protected final int MINIMUM_QUALITY = 0;
+  protected final int MAXIMUM_QUALITY = 50;
+  protected final int BEFORE_SELL_BY_MODIFIER = 1;
+  protected final int PAST_SELL_BY_MODIFIER = 2;
   private static final int SELL_IN_INCREMENT = 1;
+  private static int QUALITY_CHANGE_RATE = -1;
 
   public StandardItem(String name, int sellIn, int quality) {
     super(name, sellIn, quality);
   }
 
   public void updateQuality() {
-    quality -= QUALITY_INCREMENT * sellByModifier();
+    quality += QUALITY_CHANGE_RATE * sellByModifier();
 
-    checkMinimumQuality();
+    checkQualityBounds();
   }
 
   public void updateSellIn() {
@@ -26,8 +27,17 @@ public class StandardItem extends Item {
     return sellIn > 0 ? BEFORE_SELL_BY_MODIFIER : PAST_SELL_BY_MODIFIER;
   }
 
+  protected void checkQualityBounds() {
+    checkMinimumQuality();
+    checkMaximumQuality();
+  }
+
   protected void checkMinimumQuality() {
     quality = Math.max(MINIMUM_QUALITY, quality);
+  }
+
+  protected void checkMaximumQuality() {
+    quality = Math.min(MAXIMUM_QUALITY, quality);
   }
 
 }
