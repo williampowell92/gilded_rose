@@ -2,8 +2,6 @@ package com.gildedrose;
 
 public class BackstagePass extends StandardItem {
 
-  private static final int MAXIMUM_QUALITY = 50;
-
   public BackstagePass(String name, int sellIn, int quality) {
     super(name, sellIn, quality);
   }
@@ -14,13 +12,12 @@ public class BackstagePass extends StandardItem {
     addTenSellInLeftBonus();
     addFiveSellInLeftBonus();
 
-    checkNegativeQuality();
+    checkNegativeSellIn();
+    checkQualityBounds();
   }
 
   private void incrementQuality() {
-    if (quality < MAXIMUM_QUALITY) {
-      quality += 1;
-    }
+    quality += 1;
   }
 
   private void addTenSellInLeftBonus() {
@@ -35,7 +32,7 @@ public class BackstagePass extends StandardItem {
     }
   }
 
-  private void checkNegativeQuality() {
+  private void checkNegativeSellIn() {
     if (sellIn <= 0) quality = MINIMUM_QUALITY;
   }
 }

@@ -3,9 +3,9 @@ package com.gildedrose;
 public class StandardItem extends Item {
 
   protected final int MINIMUM_QUALITY = 0;
-  protected final int MAXIMUM_QUALITY = 50;
-  protected final int BEFORE_SELL_BY_MODIFIER = 1;
-  protected final int PAST_SELL_BY_MODIFIER = 2;
+  private final int MAXIMUM_QUALITY = 50;
+  private final int BEFORE_SELL_BY_MODIFIER = 1;
+  private final int PAST_SELL_BY_MODIFIER = 2;
   private static final int SELL_IN_INCREMENT = 1;
   private static int QUALITY_CHANGE_RATE = -1;
 
