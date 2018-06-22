@@ -13,25 +13,21 @@ public class StandardItem extends Item {
   }
 
   public void updateQuality() {
-    if (aboveMinimumQuality()) {
-      quality -= QUALITY_INCREMENT * sellByModifier();
-    }
+    quality -= QUALITY_INCREMENT * sellByModifier();
+
+    checkMinimumQuality();
   }
 
   public void updateSellIn() {
     sellIn -= SELL_IN_INCREMENT;
   }
 
-  private boolean aboveMinimumQuality() {
-    return quality > MINIMUM_QUALITY;
+  protected int sellByModifier() {
+    return sellIn > 0 ? BEFORE_SELL_BY_MODIFIER : PAST_SELL_BY_MODIFIER;
   }
 
-  private int sellByModifier() {
-    if (quality == 1) {
-      return BEFORE_SELL_BY_MODIFIER;
-    }
-
-    return sellIn > 0 ? BEFORE_SELL_BY_MODIFIER : PAST_SELL_BY_MODIFIER;
+  protected void checkMinimumQuality() {
+    quality = Math.max(MINIMUM_QUALITY, quality);
   }
 
 }

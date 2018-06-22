@@ -10,17 +10,9 @@ public class ConjuredItem extends StandardItem {
 
   @Override
   public void updateQuality() {
-    quality -= CONJURED_QUALITY_INCREMENT * conjuredSellInModifier();
+    quality -= CONJURED_QUALITY_INCREMENT * sellByModifier();
 
     checkMinimumQuality();
-  }
-
-  private int conjuredSellInModifier() {
-    return sellIn > 0 ? BEFORE_SELL_BY_MODIFIER : PAST_SELL_BY_MODIFIER;
-  }
-
-  private void checkMinimumQuality() {
-    quality = Math.max(MINIMUM_QUALITY, quality);
   }
 
 }
