@@ -2,13 +2,8 @@ package com.gildedrose.Features;
 
 import static org.junit.Assert.*;
 
-import com.gildedrose.BackstagePass;
-import com.gildedrose.Brie;
-import com.gildedrose.ConjuredItem;
 import com.gildedrose.GildedRose;
 import com.gildedrose.Item;
-import com.gildedrose.StandardItem;
-import com.gildedrose.Sulfuras;
 import org.junit.Test;
 
 public class GildedRoseTest {
