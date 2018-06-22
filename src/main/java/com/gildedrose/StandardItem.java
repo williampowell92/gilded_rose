@@ -2,7 +2,7 @@ package com.gildedrose;
 
 public class StandardItem extends Item {
 
-  private static final int MINIMUM_QUALITY = 0;
+  final int MINIMUM_QUALITY = 0;
   final int QUALITY_INCREMENT = 1;
   final int BEFORE_SELL_BY_MODIFIER = 1;
   final int PAST_SELL_BY_MODIFIER = 2;

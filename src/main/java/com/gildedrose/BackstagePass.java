@@ -14,9 +14,7 @@ public class BackstagePass extends StandardItem {
     addTenSellInLeftBonus();
     addFiveSellInLeftBonus();
 
-    if (sellIn <= 0) {
-      quality = 0;
-    }
+    checkNegativeQuality();
   }
 
   private void incrementQuality() {
@@ -35,5 +33,9 @@ public class BackstagePass extends StandardItem {
     if (sellIn <= 5) {
       incrementQuality();
     }
+  }
+
+  private void checkNegativeQuality() {
+    if (sellIn <= 0) quality = MINIMUM_QUALITY;
   }
 }
