@@ -55,34 +55,31 @@ subsequent steps.
 
 ### How to use?
 
-The app does not have a command line interface so the source code must be changed between runs to alter the output.
+The app does not have a interface so the source code must be changed between runs to alter the output.
 
 An example use of the application can be found in the TexttestFixture.java file.
 
-![TexttestFixture](https://i.imgur.com/0N2ieBM.png)
+![TexttestFixture](https://i.imgur.com/ni8HGgy.png)
 
 Once you are ready to run the app then:
 * Compile the app ```$ mvn package```
-* Run the app ```$ java -cp target/gilded-rose-kata-0.0.1-SNAPSHOT.jar com.gildedrose.Features.TexttestFixture.java```
+* Run the app ```$ java -cp target/gilded-rose-kata-0.0.1-SNAPSHOT.jar com.gildedrose.ExampleRun```
 
 If you are using an IDE such as Intellij then you can open the repository in the IDE and use the
 inbuilt run commands.
-
 
 ### Tests
 
 Testing was carried out using the Jasmine Node.js module. It will be downloaded when the program is installed. Tests can be run from the project home directory as follows:
 
 ```
-node node_modules/jasmine/bin/jasmine
+mvn test
 ```
 
 ### Further work
 
-- Errors for checking if the client withdraws below 0 balance.
-- Overdraft limits allowing the client to withdraw a certain amount below 0 balance.
-- Filtering of transaction history by date.
+- Add an interface to allow the user to interact with the application.
 
 ### Technologies
 
-This application was built using Javascript, Node.js and Jasmine.
+This application was built using Java, Maven and JUnit 4.
