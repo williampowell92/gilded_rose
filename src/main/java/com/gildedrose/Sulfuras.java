@@ -4,11 +4,7 @@ public class Sulfuras extends StandardItem {
 
   public Sulfuras(String name, int sellIn, int quality) {
     super(name, sellIn, quality);
-  }
-
-  @Override
-  public void updateQuality() {
-    // Intentionally blank override as Sulfuras' quality does not change
+    this.qualityChangeRate = 0;
   }
 
   @Override
