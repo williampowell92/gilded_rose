@@ -37,7 +37,7 @@ This tech test is based on Terry Hughes' which can be found [here](https://githu
 
 ### Approach
 
-![class diagram](https://i.imgur.com/bjSl42B.png)
+![class diagram](https://i.imgur.com/Eb75w0t.png)
 
 The class diagram above was created at the start of the project to give an overarching plan. A suite of feature tests was developed as a first step to ensure that the functionality of the program did not change through the refactoring process. A test driven approach was then followed in the creation of the new item types. Once these were completed, the old functionality was switched out for the new functionality before deleting the old functionality. The new design was then tested against the old feature tests to ensure the program still worked in the desired way.
 
