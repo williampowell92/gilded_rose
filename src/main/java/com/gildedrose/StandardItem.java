@@ -6,12 +6,13 @@ public class StandardItem extends Item {
   private final int MAXIMUM_QUALITY = 50;
   private final int BEFORE_SELL_BY_MODIFIER = 1;
   private final int PAST_SELL_BY_MODIFIER = 2;
-  private static final int SELL_IN_INCREMENT = 1;
   public int qualityChangeRate;
+  public int sellInChangeRate;
 
   public StandardItem(String name, int sellIn, int quality) {
     super(name, sellIn, quality);
     this.qualityChangeRate = -1;
+    this.sellInChangeRate = -1;
   }
 
   public void updateQuality() {
@@ -21,7 +22,7 @@ public class StandardItem extends Item {
   }
 
   public void updateSellIn() {
-    sellIn -= SELL_IN_INCREMENT;
+    sellIn += sellInChangeRate;
   }
 
   protected int sellByModifier() {
