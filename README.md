@@ -45,10 +45,7 @@ Once the above had been completed, a new item type "Conjured Item" was created t
 
 ### Installation
 
-This application has been designed to be built with Maven to simplify the build process and
-include all necessary dependencies. If you do not have Maven installed it is recommended you
-do so by following the guidelines [here](http://maven.apache.org/). To get started please follow the
-subsequent steps.
+This application has been designed to be built with Maven to simplify the build process and include all necessary dependencies. If you do not have Maven installed it is recommended you do so by following the guidelines [here](http://maven.apache.org/). To get started please follow the subsequent steps.
 
 * Clone the repository ```$ git clone https://github.com/williampowell92/gilded_rose```
 * Navigate to the top level of the directory using the command line  ```$ cd <repo name>```
@@ -70,7 +67,7 @@ inbuilt run commands.
 
 ### Tests
 
-Testing was carried out using the Jasmine Node.js module. It will be downloaded when the program is installed. Tests can be run from the project home directory as follows:
+Testing was carried out using JUnit 4.0. Tests can be run from the project home directory as follows:
 
 ```
 mvn test
